@@ -1,12 +1,17 @@
 #!/usr/bin/env node
 
 import { join } from 'node:path'
-import { mkdirSync, writeFileSync } from 'node:fs'
+import { existsSync, mkdirSync, writeFileSync } from 'node:fs'
 import { execSync } from 'node:child_process'
 
 const name = process.argv[2] || 'karabiner-config'
 const destDir = join(process.cwd(), name)
 const srcDir = join(destDir, 'src')
+
+if (existsSync(destDir)) {
+  console.error(`❌  Directory ${name} already exist.\n\n${destDir}\n`)
+  process.exit(1)
+}
 
 mkdirSync(srcDir, { recursive: true })
 
@@ -63,3 +68,5 @@ writeToProfile('--dry-run', [
 
 console.info('$ npm install')
 execSync('npm install', {cwd: destDir, stdio: 'inherit'})
+
+console.info(`\n🎉 ${name} is ready. \nStart config at ${name}/src/index.ts\n`)
