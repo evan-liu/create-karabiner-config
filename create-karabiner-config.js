@@ -24,6 +24,7 @@ writeFileSync(join(destDir, 'package.json'), `\
     "update": "npm update karabiner.ts"
   },
   "devDependencies": {
+    "@types/node": "^20.1.3",
     "karabiner.ts": "latest",
     "ts-node": "^10.9.1",
     "typescript": "^5.0.4"
