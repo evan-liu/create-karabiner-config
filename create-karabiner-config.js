@@ -20,14 +20,14 @@ writeFileSync(join(destDir, 'package.json'), `\
   "name": "karabiner-config",
   "description": "karabiner config in karabiner.ts",
   "scripts": {
-    "build": "ts-node src/index.ts",
+    "build": "tsx src/index.ts",
     "update": "npm update karabiner.ts"
   },
   "devDependencies": {
-    "@types/node": "^20.1.3",
+    "@types/node": "^20",
     "karabiner.ts": "latest",
-    "ts-node": "^10.9.1",
-    "typescript": "^5.0.4"
+    "tsx": "^4",
+    "typescript": "^5"
   }
 }
 `)
@@ -68,6 +68,6 @@ writeToProfile('--dry-run', [
 `)
 
 console.info('$ npm install')
-execSync('npm install', {cwd: destDir, stdio: 'inherit'})
+execSync('npm install', { cwd: destDir, stdio: 'inherit' })
 
 console.info(`\n🎉 ${name} is ready. \nStart config at ${name}/src/index.ts\n`)
