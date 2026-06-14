@@ -1,6 +1,6 @@
 {
   "name": "create-karabiner-config",
-  "version": "0.1.5",
+  "version": "0.2.0",
   "description": "Create karabiner config project in karabiner.ts",
   "license": "MIT",
   "author": "Evan Liu",
