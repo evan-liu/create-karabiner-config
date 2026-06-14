@@ -20,6 +20,7 @@ writeFileSync(join(destDir, 'package.json'), `\
   "name": "karabiner-config",
   "description": "karabiner config in karabiner.ts",
   "scripts": {
+    "dev": "tsx watch src/index.ts",
     "build": "tsx src/index.ts",
     "update": "npm update karabiner.ts"
   },
